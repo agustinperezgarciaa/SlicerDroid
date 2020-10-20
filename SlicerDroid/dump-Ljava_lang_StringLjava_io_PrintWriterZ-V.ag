@@ -1,0 +1,334 @@
+# Landroid/support/v4/app/BackStackRecord;->dump(Ljava/lang/String; Ljava/io/PrintWriter; Z)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v7
+# - v8:java.lang.String
+# - v9:java.io.PrintWriter
+# - v10:boolean
+#
+# - return:void
+
+dump-BB@0x0 : [ dump-BB@0x6 dump-BB@0x1b6 ]
+	0       (00000000) const/4              v1, 0
+	1       (00000002) if-eqz               v10, +da
+
+dump-BB@0x6 : [ dump-BB@0x50 dump-BB@0x8e ]
+	2       (00000006) invoke-virtual       v9, v8, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
+	3       (0000000c) const-string         v0, 'mName='
+	4       (00000010) invoke-virtual       v9, v0, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
+	5       (00000016) iget-object          v0, v7, Landroid/support/v4/app/BackStackRecord;->mName Ljava/lang/String;
+	6       (0000001a) invoke-virtual       v9, v0, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
+	7       (00000020) const-string         v0, ' mIndex='
+	8       (00000024) invoke-virtual       v9, v0, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
+	9       (0000002a) iget                 v0, v7, Landroid/support/v4/app/BackStackRecord;->mIndex I
+	10      (0000002e) invoke-virtual       v9, v0, Ljava/io/PrintWriter;->print(I)V
+	11      (00000034) const-string         v0, ' mCommitted='
+	12      (00000038) invoke-virtual       v9, v0, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
+	13      (0000003e) iget-boolean         v0, v7, Landroid/support/v4/app/BackStackRecord;->mCommitted Z
+	14      (00000042) invoke-virtual       v9, v0, Ljava/io/PrintWriter;->println(Z)V
+	15      (00000048) iget                 v0, v7, Landroid/support/v4/app/BackStackRecord;->mTransition I
+	16      (0000004c) if-eqz               v0, +21
+
+dump-BB@0x50 : [ dump-BB@0x8e ]
+	17      (00000050) invoke-virtual       v9, v8, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
+	18      (00000056) const-string         v0, 'mTransition=#'
+	19      (0000005a) invoke-virtual       v9, v0, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
+	20      (00000060) iget                 v0, v7, Landroid/support/v4/app/BackStackRecord;->mTransition I
+	21      (00000064) invoke-static        v0, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
+	22      (0000006a) move-result-object   v0
+	23      (0000006c) invoke-virtual       v9, v0, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
+	24      (00000072) const-string         v0, ' mTransitionStyle=#'
+	25      (00000076) invoke-virtual       v9, v0, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
+	26      (0000007c) iget                 v0, v7, Landroid/support/v4/app/BackStackRecord;->mTransitionStyle I
+	27      (00000080) invoke-static        v0, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
+	28      (00000086) move-result-object   v0
+	29      (00000088) invoke-virtual       v9, v0, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+
+dump-BB@0x8e : [ dump-BB@0x96 dump-BB@0x9e ]
+	30      (0000008e) iget                 v0, v7, Landroid/support/v4/app/BackStackRecord;->mEnterAnim I
+	31      (00000092) if-nez               v0, +6
+
+dump-BB@0x96 : [ dump-BB@0x9e dump-BB@0xdc ]
+	32      (00000096) iget                 v0, v7, Landroid/support/v4/app/BackStackRecord;->mExitAnim I
+	33      (0000009a) if-eqz               v0, +21
+
+dump-BB@0x9e : [ dump-BB@0xdc ]
+	34      (0000009e) invoke-virtual       v9, v8, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
+	35      (000000a4) const-string         v0, 'mEnterAnim=#'
+	36      (000000a8) invoke-virtual       v9, v0, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
+	37      (000000ae) iget                 v0, v7, Landroid/support/v4/app/BackStackRecord;->mEnterAnim I
+	38      (000000b2) invoke-static        v0, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
+	39      (000000b8) move-result-object   v0
+	40      (000000ba) invoke-virtual       v9, v0, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
+	41      (000000c0) const-string         v0, ' mExitAnim=#'
+	42      (000000c4) invoke-virtual       v9, v0, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
+	43      (000000ca) iget                 v0, v7, Landroid/support/v4/app/BackStackRecord;->mExitAnim I
+	44      (000000ce) invoke-static        v0, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
+	45      (000000d4) move-result-object   v0
+	46      (000000d6) invoke-virtual       v9, v0, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+
+dump-BB@0xdc : [ dump-BB@0xe4 dump-BB@0xec ]
+	47      (000000dc) iget                 v0, v7, Landroid/support/v4/app/BackStackRecord;->mPopEnterAnim I
+	48      (000000e0) if-nez               v0, +6
+
+dump-BB@0xe4 : [ dump-BB@0xec dump-BB@0x12a ]
+	49      (000000e4) iget                 v0, v7, Landroid/support/v4/app/BackStackRecord;->mPopExitAnim I
+	50      (000000e8) if-eqz               v0, +21
+
+dump-BB@0xec : [ dump-BB@0x12a ]
+	51      (000000ec) invoke-virtual       v9, v8, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
+	52      (000000f2) const-string         v0, 'mPopEnterAnim=#'
+	53      (000000f6) invoke-virtual       v9, v0, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
+	54      (000000fc) iget                 v0, v7, Landroid/support/v4/app/BackStackRecord;->mPopEnterAnim I
+	55      (00000100) invoke-static        v0, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
+	56      (00000106) move-result-object   v0
+	57      (00000108) invoke-virtual       v9, v0, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
+	58      (0000010e) const-string         v0, ' mPopExitAnim=#'
+	59      (00000112) invoke-virtual       v9, v0, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
+	60      (00000118) iget                 v0, v7, Landroid/support/v4/app/BackStackRecord;->mPopExitAnim I
+	61      (0000011c) invoke-static        v0, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
+	62      (00000122) move-result-object   v0
+	63      (00000124) invoke-virtual       v9, v0, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+
+dump-BB@0x12a : [ dump-BB@0x132 dump-BB@0x13a ]
+	64      (0000012a) iget                 v0, v7, Landroid/support/v4/app/BackStackRecord;->mBreadCrumbTitleRes I
+	65      (0000012e) if-nez               v0, +6
+
+dump-BB@0x132 : [ dump-BB@0x13a dump-BB@0x170 ]
+	66      (00000132) iget-object          v0, v7, Landroid/support/v4/app/BackStackRecord;->mBreadCrumbTitleText Ljava/lang/CharSequence;
+	67      (00000136) if-eqz               v0, +1d
+
+dump-BB@0x13a : [ dump-BB@0x170 ]
+	68      (0000013a) invoke-virtual       v9, v8, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
+	69      (00000140) const-string         v0, 'mBreadCrumbTitleRes=#'
+	70      (00000144) invoke-virtual       v9, v0, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
+	71      (0000014a) iget                 v0, v7, Landroid/support/v4/app/BackStackRecord;->mBreadCrumbTitleRes I
+	72      (0000014e) invoke-static        v0, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
+	73      (00000154) move-result-object   v0
+	74      (00000156) invoke-virtual       v9, v0, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
+	75      (0000015c) const-string         v0, ' mBreadCrumbTitleText='
+	76      (00000160) invoke-virtual       v9, v0, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
+	77      (00000166) iget-object          v0, v7, Landroid/support/v4/app/BackStackRecord;->mBreadCrumbTitleText Ljava/lang/CharSequence;
+	78      (0000016a) invoke-virtual       v9, v0, Ljava/io/PrintWriter;->println(Ljava/lang/Object;)V
+
+dump-BB@0x170 : [ dump-BB@0x178 dump-BB@0x180 ]
+	79      (00000170) iget                 v0, v7, Landroid/support/v4/app/BackStackRecord;->mBreadCrumbShortTitleRes I
+	80      (00000174) if-nez               v0, +6
+
+dump-BB@0x178 : [ dump-BB@0x180 dump-BB@0x1b6 ]
+	81      (00000178) iget-object          v0, v7, Landroid/support/v4/app/BackStackRecord;->mBreadCrumbShortTitleText Ljava/lang/CharSequence;
+	82      (0000017c) if-eqz               v0, +1d
+
+dump-BB@0x180 : [ dump-BB@0x1b6 ]
+	83      (00000180) invoke-virtual       v9, v8, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
+	84      (00000186) const-string         v0, 'mBreadCrumbShortTitleRes=#'
+	85      (0000018a) invoke-virtual       v9, v0, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
+	86      (00000190) iget                 v0, v7, Landroid/support/v4/app/BackStackRecord;->mBreadCrumbShortTitleRes I
+	87      (00000194) invoke-static        v0, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
+	88      (0000019a) move-result-object   v0
+	89      (0000019c) invoke-virtual       v9, v0, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
+	90      (000001a2) const-string         v0, ' mBreadCrumbShortTitleText='
+	91      (000001a6) invoke-virtual       v9, v0, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
+	92      (000001ac) iget-object          v0, v7, Landroid/support/v4/app/BackStackRecord;->mBreadCrumbShortTitleText Ljava/lang/CharSequence;
+	93      (000001b0) invoke-virtual       v9, v0, Ljava/io/PrintWriter;->println(Ljava/lang/Object;)V
+
+dump-BB@0x1b6 : [ dump-BB@0x1be dump-BB@0x3f0 ]
+	94      (000001b6) iget-object          v0, v7, Landroid/support/v4/app/BackStackRecord;->mHead Landroid/support/v4/app/BackStackRecord$Op;
+	95      (000001ba) if-eqz               v0, +11b
+
+dump-BB@0x1be : [ dump-BB@0x1fc ]
+	96      (000001be) invoke-virtual       v9, v8, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
+	97      (000001c4) const-string         v0, 'Operations:'
+	98      (000001c8) invoke-virtual       v9, v0, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+	99      (000001ce) new-instance         v0, Ljava/lang/StringBuilder;
+	100     (000001d2) invoke-direct        v0, Ljava/lang/StringBuilder;-><init>()V
+	101     (000001d8) invoke-virtual       v0, v8, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	102     (000001de) move-result-object   v0
+	103     (000001e0) const-string         v2, '    '
+	104     (000001e4) invoke-virtual       v0, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	105     (000001ea) move-result-object   v0
+	106     (000001ec) invoke-virtual       v0, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	107     (000001f2) move-result-object   v4
+	108     (000001f4) iget-object          v0, v7, Landroid/support/v4/app/BackStackRecord;->mHead Landroid/support/v4/app/BackStackRecord$Op;
+	109     (000001f8) move                 v2, v1
+	110     (000001fa) move-object          v3, v0
+
+dump-BB@0x1fc : [ dump-BB@0x200 dump-BB@0x3f0 ]
+	111     (000001fc) if-eqz               v3, +fa
+
+dump-BB@0x200 : [ D:dump-BB@0x20a 0:dump-BB@0x372 1:dump-BB@0x37a 2:dump-BB@0x382 3:dump-BB@0x38a 4:dump-BB@0x392 5:dump-BB@0x39a 6:dump-BB@0x3a2 7:dump-BB@0x3aa ]
+	112     (00000200) iget                 v0, v3, Landroid/support/v4/app/BackStackRecord$Op;->cmd I
+	113     (00000204) packed-switch        v0, +f8 (0x3f4)
+
+dump-BB@0x20a : [ dump-BB@0x234 ]
+	114     (0000020a) new-instance         v0, Ljava/lang/StringBuilder;
+	115     (0000020e) invoke-direct        v0, Ljava/lang/StringBuilder;-><init>()V
+	116     (00000214) const-string         v5, 'cmd='
+	117     (00000218) invoke-virtual       v0, v5, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	118     (0000021e) move-result-object   v0
+	119     (00000220) iget                 v5, v3, Landroid/support/v4/app/BackStackRecord$Op;->cmd I
+	120     (00000224) invoke-virtual       v0, v5, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	121     (0000022a) move-result-object   v0
+	122     (0000022c) invoke-virtual       v0, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	123     (00000232) move-result-object   v0
+
+dump-BB@0x234 : [ dump-BB@0x272 dump-BB@0x30e ]
+	124     (00000234) invoke-virtual       v9, v8, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
+	125     (0000023a) const-string         v5, '  Op #'
+	126     (0000023e) invoke-virtual       v9, v5, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
+	127     (00000244) invoke-virtual       v9, v2, Ljava/io/PrintWriter;->print(I)V
+	128     (0000024a) const-string         v5, ': '
+	129     (0000024e) invoke-virtual       v9, v5, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
+	130     (00000254) invoke-virtual       v9, v0, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
+	131     (0000025a) const-string         v0, ' '
+	132     (0000025e) invoke-virtual       v9, v0, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
+	133     (00000264) iget-object          v0, v3, Landroid/support/v4/app/BackStackRecord$Op;->fragment Landroid/support/v4/app/Fragment;
+	134     (00000268) invoke-virtual       v9, v0, Ljava/io/PrintWriter;->println(Ljava/lang/Object;)V
+	135     (0000026e) if-eqz               v10, +50
+
+dump-BB@0x272 : [ dump-BB@0x27a dump-BB@0x282 ]
+	136     (00000272) iget                 v0, v3, Landroid/support/v4/app/BackStackRecord$Op;->enterAnim I
+	137     (00000276) if-nez               v0, +6
+
+dump-BB@0x27a : [ dump-BB@0x282 dump-BB@0x2c0 ]
+	138     (0000027a) iget                 v0, v3, Landroid/support/v4/app/BackStackRecord$Op;->exitAnim I
+	139     (0000027e) if-eqz               v0, +21
+
+dump-BB@0x282 : [ dump-BB@0x2c0 ]
+	140     (00000282) invoke-virtual       v9, v8, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
+	141     (00000288) const-string         v0, 'enterAnim=#'
+	142     (0000028c) invoke-virtual       v9, v0, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
+	143     (00000292) iget                 v0, v3, Landroid/support/v4/app/BackStackRecord$Op;->enterAnim I
+	144     (00000296) invoke-static        v0, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
+	145     (0000029c) move-result-object   v0
+	146     (0000029e) invoke-virtual       v9, v0, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
+	147     (000002a4) const-string         v0, ' exitAnim=#'
+	148     (000002a8) invoke-virtual       v9, v0, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
+	149     (000002ae) iget                 v0, v3, Landroid/support/v4/app/BackStackRecord$Op;->exitAnim I
+	150     (000002b2) invoke-static        v0, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
+	151     (000002b8) move-result-object   v0
+	152     (000002ba) invoke-virtual       v9, v0, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+
+dump-BB@0x2c0 : [ dump-BB@0x2c8 dump-BB@0x2d0 ]
+	153     (000002c0) iget                 v0, v3, Landroid/support/v4/app/BackStackRecord$Op;->popEnterAnim I
+	154     (000002c4) if-nez               v0, +6
+
+dump-BB@0x2c8 : [ dump-BB@0x2d0 dump-BB@0x30e ]
+	155     (000002c8) iget                 v0, v3, Landroid/support/v4/app/BackStackRecord$Op;->popExitAnim I
+	156     (000002cc) if-eqz               v0, +21
+
+dump-BB@0x2d0 : [ dump-BB@0x30e ]
+	157     (000002d0) invoke-virtual       v9, v8, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
+	158     (000002d6) const-string         v0, 'popEnterAnim=#'
+	159     (000002da) invoke-virtual       v9, v0, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
+	160     (000002e0) iget                 v0, v3, Landroid/support/v4/app/BackStackRecord$Op;->popEnterAnim I
+	161     (000002e4) invoke-static        v0, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
+	162     (000002ea) move-result-object   v0
+	163     (000002ec) invoke-virtual       v9, v0, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
+	164     (000002f2) const-string         v0, ' popExitAnim=#'
+	165     (000002f6) invoke-virtual       v9, v0, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
+	166     (000002fc) iget                 v0, v3, Landroid/support/v4/app/BackStackRecord$Op;->popExitAnim I
+	167     (00000300) invoke-static        v0, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
+	168     (00000306) move-result-object   v0
+	169     (00000308) invoke-virtual       v9, v0, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+
+dump-BB@0x30e : [ dump-BB@0x316 dump-BB@0x3e2 ]
+	170     (0000030e) iget-object          v0, v3, Landroid/support/v4/app/BackStackRecord$Op;->removed Ljava/util/ArrayList;
+	171     (00000312) if-eqz               v0, +68
+
+dump-BB@0x316 : [ dump-BB@0x326 dump-BB@0x3e2 ]
+	172     (00000316) iget-object          v0, v3, Landroid/support/v4/app/BackStackRecord$Op;->removed Ljava/util/ArrayList;
+	173     (0000031a) invoke-virtual       v0, Ljava/util/ArrayList;->size()I
+	174     (00000320) move-result          v0
+	175     (00000322) if-lez               v0, +60
+
+dump-BB@0x326 : [ dump-BB@0x328 ]
+	176     (00000326) move                 v0, v1
+
+dump-BB@0x328 : [ dump-BB@0x338 dump-BB@0x3e2 ]
+	177     (00000328) iget-object          v5, v3, Landroid/support/v4/app/BackStackRecord$Op;->removed Ljava/util/ArrayList;
+	178     (0000032c) invoke-virtual       v5, Ljava/util/ArrayList;->size()I
+	179     (00000332) move-result          v5
+	180     (00000334) if-ge                v0, v5, +57
+
+dump-BB@0x338 : [ dump-BB@0x350 dump-BB@0x3b2 ]
+	181     (00000338) invoke-virtual       v9, v4, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
+	182     (0000033e) iget-object          v5, v3, Landroid/support/v4/app/BackStackRecord$Op;->removed Ljava/util/ArrayList;
+	183     (00000342) invoke-virtual       v5, Ljava/util/ArrayList;->size()I
+	184     (00000348) move-result          v5
+	185     (0000034a) const/4              v6, 1
+	186     (0000034c) if-ne                v5, v6, +33
+
+dump-BB@0x350 : [ dump-BB@0x35a ]
+	187     (00000350) const-string         v5, 'Removed: '
+	188     (00000354) invoke-virtual       v9, v5, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
+
+dump-BB@0x35a : [ dump-BB@0x328 ]
+	189     (0000035a) iget-object          v5, v3, Landroid/support/v4/app/BackStackRecord$Op;->removed Ljava/util/ArrayList;
+	190     (0000035e) invoke-virtual       v5, v0, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+	191     (00000364) move-result-object   v5
+	192     (00000366) invoke-virtual       v9, v5, Ljava/io/PrintWriter;->println(Ljava/lang/Object;)V
+	193     (0000036c) add-int/lit8         v0, v0, 1
+	194     (00000370) goto                 -24
+
+dump-BB@0x372 : [ dump-BB@0x234 ]
+	195     (00000372) const-string         v0, 'NULL'
+	196     (00000376) goto/16              -a1
+
+dump-BB@0x37a : [ dump-BB@0x234 ]
+	197     (0000037a) const-string         v0, 'ADD'
+	198     (0000037e) goto/16              -a5
+
+dump-BB@0x382 : [ dump-BB@0x234 ]
+	199     (00000382) const-string         v0, 'REPLACE'
+	200     (00000386) goto/16              -a9
+
+dump-BB@0x38a : [ dump-BB@0x234 ]
+	201     (0000038a) const-string         v0, 'REMOVE'
+	202     (0000038e) goto/16              -ad
+
+dump-BB@0x392 : [ dump-BB@0x234 ]
+	203     (00000392) const-string         v0, 'HIDE'
+	204     (00000396) goto/16              -b1
+
+dump-BB@0x39a : [ dump-BB@0x234 ]
+	205     (0000039a) const-string         v0, 'SHOW'
+	206     (0000039e) goto/16              -b5
+
+dump-BB@0x3a2 : [ dump-BB@0x234 ]
+	207     (000003a2) const-string         v0, 'DETACH'
+	208     (000003a6) goto/16              -b9
+
+dump-BB@0x3aa : [ dump-BB@0x234 ]
+	209     (000003aa) const-string         v0, 'ATTACH'
+	210     (000003ae) goto/16              -bd
+
+dump-BB@0x3b2 : [ dump-BB@0x3b6 dump-BB@0x3c0 ]
+	211     (000003b2) if-nez               v0, +7
+
+dump-BB@0x3b6 : [ dump-BB@0x3c0 ]
+	212     (000003b6) const-string         v5, 'Removed:'
+	213     (000003ba) invoke-virtual       v9, v5, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+
+dump-BB@0x3c0 : [ dump-BB@0x35a ]
+	214     (000003c0) invoke-virtual       v9, v4, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
+	215     (000003c6) const-string         v5, '  #'
+	216     (000003ca) invoke-virtual       v9, v5, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
+	217     (000003d0) invoke-virtual       v9, v0, Ljava/io/PrintWriter;->print(I)V
+	218     (000003d6) const-string         v5, ': '
+	219     (000003da) invoke-virtual       v9, v5, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
+	220     (000003e0) goto                 -43
+
+dump-BB@0x3e2 : [ dump-BB@0x1fc ]
+	221     (000003e2) iget-object          v3, v3, Landroid/support/v4/app/BackStackRecord$Op;->next Landroid/support/v4/app/BackStackRecord$Op;
+	222     (000003e6) add-int/lit8         v0, v2, 1
+	223     (000003ea) move                 v2, v0
+	224     (000003ec) goto/16              -f8
+
+dump-BB@0x3f0 : 
+	225     (000003f0) return-void          
+
+dump-BB@0x3f2 : 
+	226     (000003f2) nop                  
+	227     (000003f4) packed-switch-payload 0 1 2 3 4 5 6 7
+
